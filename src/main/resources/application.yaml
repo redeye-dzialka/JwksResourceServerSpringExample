@@ -1,0 +1,22 @@
+management:
+  endpoints:
+    enabled-by-default: true
+    web:
+      exposure:
+        include:  "*"
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://euro.com.pl
+          jwk-set-uri: http://localhost:8090/keys/jwks.json
+
+springdoc:
+  swagger-ui:
+    path: "/swagger-ui.html"
+
+logging:
+  level:
+    com.* : TRACE
+    org.springframework.* : TRACE
